@@ -24,7 +24,7 @@ if (isset($_GET['submit'])) {
  $myfile=$_GET['disease'];
  
  $myfile=$myfile."-death.csv";
- $_SESSION['disease']=$disease;
+// $_SESSION['disease']=$disease;
 
 
   if (($handle = fopen($myfile, "r")) !== false) {

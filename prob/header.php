@@ -25,7 +25,7 @@
 		font-style: italic;
 		font-family: Lato;
 	}
-  canvas { max-width: 70%;
+  canvas { max-width: 800px;
   max-height: 800px; }
 </style>
 <body>
