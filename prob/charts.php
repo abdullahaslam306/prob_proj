@@ -24,7 +24,7 @@ if (isset($_GET['submit'])) {
  $myfile=$_GET['disease'];
  
  $myfile=$myfile."-death.csv";
-// $_SESSION['disease']=$disease;
+ $_SESSION['disease']=$disease;
 
 
   if (($handle = fopen($myfile, "r")) !== false) {
@@ -73,7 +73,7 @@ if (isset($_GET['submit'])) {
         <option selected>Choose...</option>
         <option value="Pakistan">Pakistan</option>
         <option value="Afghanistan">Afghanistan</option>
-        <option value="Amarican">America</option>
+        <option value="American">America</option>
         <option value="Australia">Australia</option>
          
       </select>
@@ -87,6 +87,7 @@ if (isset($_GET['submit'])) {
         <option value="cancer">Cancer</option>
          <option value="malaria">Malaria</option>
           <option value="stroke">Stroke</option>
+           <option value="tb">Tuberculosis</option>
 
         
       </select>
@@ -119,7 +120,7 @@ Select Country and Disease To View Analysis through Graph</p>
   <div class="col-md-8">
      <h2><?php if (isset($_GET['submit'])) {
         # code...
-         echo " Graph of $_GET[disease] in  : $_GET[country]  (Last 18 Years)       ";
+         echo " Graph of $_GET[disease] in  : $_GET[country]  (Last 28 Years)       ";
       }
       ?></h2>
   <canvas id="myChart" width="20" height="20"></canvas>

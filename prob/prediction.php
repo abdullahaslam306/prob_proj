@@ -15,9 +15,8 @@ session_start();
 
 
 include("header.php");
-  $country;
-$disease;
 
+ $pred=0;
 if (isset($_GET['submit'])) {
 
   $disease=$_GET['disease'];
@@ -72,11 +71,11 @@ if (isset($_GET['submit'])) {
 
     $b = ($n*$sum_xy-$sum_x*$sum_y)/($n*$sum_x2-$sum_x*$sum_x);
 
-    $input = 2020;
+    $input = 2018;
 
     $pred = $a + $b*$input;
 
-    echo $pred,'<br>';
+   
 
    
     fclose($handle);
@@ -86,7 +85,7 @@ if (isset($_GET['submit'])) {
  ?>
 
 <div class="container">
-  <h2> Charts</h2>
+  <h2> Death Rate Prediction By Country</h2>
   <form>
     <div class="form-row">
     <div class="col">
@@ -121,84 +120,58 @@ if (isset($_GET['submit'])) {
     <div class="col">
       <div class="form-group">
         <label style="color:white;">.</label>
-    <input type="submit" name="submit" value="Find" class="form-control">
+    <input type="submit" name="submit" value="Find" class="form-control "  >
     </div>
   </div>
   </div>
 
  </form>
-   <center><p> <p class="lead myp">
-Select Country and Disease To View Analysis through Graph</p>
-  </p></center>
+   <center><p> <p class="lead mypara" style="font-size: 23px;">
+This Prediction Tool use Linear Regression and Returns Death Rate Per 1,00,000 People.</p>
+  </p>
+<br>
+<br>
+<br>
+</center>
 
    
+   <div class="row">
+     <div class="col-md-4"></div>
+     <div class="col-md-4" style="border: 2px solid #1d3d63; padding: 10px;">
+       <?php 
+        echo "<h3 align='center'>".round($pred,3)."</h3>"; ?>
+     </div>
+     <div class="col-md-4">
+       
+     </div>
+   </div>
     
+<div class="row">
+     <div class="col-md-4"></div>
+     <div class="col-md-4" >
+       <center><p class="mypara"> This predicted death rate shows <?php echo "<b>",round($pred,3)*100000,"</b>";  ?> people out of 1,00,000 can Die due to <?php if (isset($_GET['submit'])) {
+         echo $_GET['disease']." ";
+       }
+       else{
+        echo "<b>N/A </b>";
+       } ?> 
 
+  next year
+     </p></center>
+     </div>
+     <div class="col-md-4">
+       
+     </div>
+   </div>
      
  
 
-<div class="row">
-  <div class="col-md-2">
-    
-  </div>
-  <div class="col-md-8">
-     <h2><?php if (isset($_GET['submit'])) {
-        # code...
-         echo " Graph of $_GET[disease] in  : $_GET[country]  (Last 18 Years)       ";
-      }
-      ?></h2>
-  <canvas id="myChart" width="20" height="20"></canvas>
- 
-  </div>
-  <div class="col-md-2"></div>
-</div>
+
 
 
 
 
 
 </div>
-<script type="text/javascript">
-	
- 
-  
 
-var ctx = document.getElementById("myChart").getContext('2d');
-
-var myChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: dataLabels,
-    datasets: [{
-      label: 'Death Rate',
-      data: dataValues,
-      backgroundColor: 'rgba(254, 100, 137, 60)',borderColor:'rgb(20, 18, 18)',
-    }]
-  },
-  options: {
-    scales: {
-      xAxes: [{
-        display: false,
-        barPercentage: 1.3,
-        ticks: {
-            max: 18,
-        }
-     }, {
-        display: true,
-        ticks: {
-            autoSkip: false,
-            max: 4,
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          beginAtZero:true
-        }
-      }]
-    }
-  }
-});
-
-
-</script>
 <?php include("footer.php"); ?>
