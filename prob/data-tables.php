@@ -2,12 +2,12 @@
 error_reporting(0);
 session_start();
 include ("header.php");
-$country = array();
+$country = array(); 
 $code = array();
 $year = array();
 $deathrate = array();
 
- 
+
 
 if (isset($_GET['submit'])) 
 {  

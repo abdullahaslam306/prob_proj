@@ -31,6 +31,12 @@
     color: #1d3d63;
     font-family: Playfair Display;
   }
+  .head3{
+    font-weight: 400;
+    font-size:30px;
+    color: #1d3d63;
+    font-family: Playfair Display;
+  }
 	.myp{
 		font-weight: 400;
 		font-size:14px;
