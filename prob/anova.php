@@ -120,7 +120,9 @@ Select Countries and Disease to View Results</p>
     <div class="col-md-8">
     <h2 class="head2">NULL HYPOTHESIS</h2>
     <p>ndjknekldmweld,</p>
-    <h2 class="head3">Anova Results</h2>
+    <h2 class="head3">Anova Results <?php if(isset($_GET['submit'])){
+      echo "($_GET[country1] + $_GET[country2] + $_GET[country3] with $_GET[disease])";
+    }?></h2>
     <table class="table table-bordered">
   <thead>
     <tr style="background-color: #002147; Color:white;">
@@ -133,21 +135,33 @@ Select Countries and Disease to View Results</p>
   <tbody>
     <tr>
       <th scope="row">Sum of Squares</th>
-      <td><?php echo $values[2] ;?> </td>
+      <td><?php if(isset($_GET['submit'])){
+           echo $values[2] ;}else{
+           echo "NA";}?> </td>
    
      
-      <td><?php echo $values2[2] ;?> </td>
+      <td><?php if(isset($_GET['submit'])){
+           echo $values2[2] ;}else{
+           echo "NA";} ?> </td>
     </tr>
     <tr>
       <th scope="row">Mean of Squares</th>
-      <td><?php echo $values[3] ;?></td>
-      <td><?php echo $values2[3] ;?></td>
+      <td><?php if(isset($_GET['submit'])){
+           echo $values[3] ;}else{
+           echo "NA";} ?></td>
+      <td><?php if(isset($_GET['submit'])){
+           echo $values2[3] ;}else{
+           echo "NA";} ?></td>
      
     </tr>
     <tr>
       <th scope="row">Degree of Freedom</th>
-      <td><?php echo $values[1] ;?></td>
-      <td><?php echo $values2[1] ;?></td>
+      <td><?php if(isset($_GET['submit'])){
+           echo $values[1] ;}else{
+           echo "NA";} ?></td>
+      <td><?php if(isset($_GET['submit'])){
+           echo $values2[1] ;}else{
+           echo "NA";} ?></td>
     
     </tr>
     
@@ -169,10 +183,14 @@ Select Countries and Disease to View Results</p>
          <tbody>
            <tr>
            <td>
-           <?php echo $values[4] ;?>
+           <?php if(isset($_GET['submit'])){
+           echo $values[4] ;}else{
+           echo "NA";} ?>
            </td>
            <td>
-           <?php echo $values[5] ;?>
+           <?php if(isset($_GET['submit'])){
+           echo $values[5] ;}else{
+           echo "NA";} ?>
            </td>
 </tr>
          </tbody>

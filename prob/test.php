@@ -4,21 +4,22 @@
 
     if(isset($_GET))
     {
-     $str = '"C:\\Program Files\\R\\R-3.6.3\\bin\Rscript.exe" C:\\wamp64\\www\\Prob_Project\\prob\\sample.R '.$_GET["country1"].' '.$_GET["country2"].' '.$_GET["country3"].' Overall"'; 
-     // echo($str);
+     $str = '"C:\\Program Files\\R\\R-3.6.3\\bin\Rscript.exe" C:\\wamp64\\www\\Prob_Project\\prob\\ttest.R '.$_GET["country1"].' '.$_GET["country2"].' Overall"'; 
+      echo($str);
      exec($str,$output);
-     $res = $output[1];
-     $res = explode(" ",$res);
-     $values = array();
-     foreach($res as $x)
-     {
-       if($x!=="")
-       array_push($values,$x);
-     }
+     print_r($output);
+    //  $res = $output[1];
+    //  $res = explode(" ",$res);
+    //  $values = array();
+    //  foreach($res as $x)
+    //  {
+    //    if($x!=="")
+    //    array_push($values,$x);
+    //  }
 
      
 
-     print_r($values);
+    //  print_r($values);
     }
     ?>
 

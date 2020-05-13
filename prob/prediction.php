@@ -149,7 +149,7 @@ This Prediction Tool use Linear Regression and Returns Death Rate Per 1,00,000 P
 <div class="row">
      <div class="col-md-4"></div>
      <div class="col-md-4" >
-       <center><p class="mypara"> This predicted death rate shows <?php echo "<b>",round($pred,3)*100000,"</b>";  ?> people out of 1,00,000 can Die due to <?php if (isset($_GET['submit'])) {
+       <center><p class="mypara"> This predicted death rate shows <?php echo "<b>",round($pred,3),"</b>";  ?> people out of 1,00,000 can Die due to <?php if (isset($_GET['submit'])) {
          echo $_GET['disease']." ";
        }
        else{
